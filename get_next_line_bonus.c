@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkarabul <nkarabul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 19:11:51 by nkarabul          #+#    #+#             */
-/*   Updated: 2024/01/20 19:13:05 by nkarabul         ###   ########.fr       */
+/*   Created: 2024/01/20 19:11:19 by nkarabul          #+#    #+#             */
+/*   Updated: 2024/01/20 19:11:22 by nkarabul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_readline(int fd, char *dst)
 {
@@ -92,15 +92,15 @@ char	*ft_get_left(char *dst)
 
 char	*get_next_line(int fd)
 {
-	static char	*dst;
+	static char	*dst[10240];
 	char		*str;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	dst = ft_readline(fd, dst);
-	if (!dst)
+	dst[fd] = ft_readline(fd, dst[fd]);
+	if (!dst[fd])
 		return (NULL);
-	str = ft_getline(dst);
-	dst = ft_get_left(dst);
+	str = ft_getline(dst[fd]);
+	dst[fd] = ft_get_left(dst[fd]);
 	return (str);
 }

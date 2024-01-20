@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkarabul <nkarabul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 19:11:56 by nkarabul          #+#    #+#             */
-/*   Updated: 2024/01/20 19:12:12 by nkarabul         ###   ########.fr       */
+/*   Created: 2024/01/20 19:11:09 by nkarabul          #+#    #+#             */
+/*   Updated: 2024/01/20 19:14:07 by nkarabul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -26,4 +26,4 @@ char	*ft_readline(int fd, char *dst);
 #  define BUFFER_SIZE 42
 # endif
 
-#endif
+#endif  
